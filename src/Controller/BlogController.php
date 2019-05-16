@@ -101,6 +101,19 @@ class BlogController extends AbstractController
      */
     public function showByCategory(string $category): response
     {
+        $categoryObject = $this->getDoctrine()
+            ->getRepository(Category::class)
+            ->findOneByName($category);
+
+        $articles = $categoryObject->getArticles();
+
+        return $this->render(
+            'blog/category.html.twig', [
+            'category' => $categoryObject,
+            'articles' => $articles,
+        ]);
+
+        /*
         if (!$category) {
             throw $this
                 ->createNotFoundException('No category has been sent to find an article in article\'s table.');
@@ -121,5 +134,6 @@ class BlogController extends AbstractController
                 'articles' => $articles,
             ]
         );
+        */
     }
 }
