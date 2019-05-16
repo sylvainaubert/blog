@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ category.name }}{% endblock %}
+
+
+{% block body %}
+
+    <h1>{{ category.name }}</h1>
+
+    {% for article in articles %}
+
+        <div>
+            <h2>Article's title : {{ article.title }}</h2>
+            <p class="card-text">{{ article.content }}</p>
+        </div>
+
+    {% endfor %}
+    <a href="{{ path('app_index') }}">
+        <button type="button" class="btn btn-secondary">Back to homepage.</button>
+    </a>
+
+{% endblock %}
