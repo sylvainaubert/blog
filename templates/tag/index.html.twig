@@ -17,7 +17,7 @@
         <h1>Liste des Articles par : {{ tags.name }}</h1>
 
         {% for article in tags.articles %}
-            <li>{{ article.id }} {{ article.title }} </li>
+            <li><a href="{{ path('article_show', {'id': article.id}) }}">{{ article.id }} {{ article.title }}</a></li>
         {% else %}
             <li>No articles</li>
         {% endfor %}
