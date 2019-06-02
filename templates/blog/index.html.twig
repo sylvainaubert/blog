@@ -22,6 +22,7 @@
         {% for article in articles %}
             <div>
                 <h2>{{ loop.index }} / {{ article.title }} - Category : {{ article.category.name }}</h2>
+                <p>slug = {{ article.slug }}</p>
                 <p>{{ article.content }}</p>
             </div>
         {% else %}
