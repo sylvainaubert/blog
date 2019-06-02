@@ -1,7 +1,79 @@
 // the ~ allows you to reference things in node_modules
 @import "~bootstrap/scss/bootstrap";
+@import "vars";
 
 
 body {
-    background-color: #ececec;
+  background-color: #ececec;
+}
+
+h1 {
+  margin: 100px auto 60px auto;
+  font-size: 60px;
+  font-weight: 500;
+  color: $secondary-color;
+  font-family: $font-title;
+}
+
+p {
+  font-family: $font-text;
+}
+
+nav{
+  background-color: $primary-color;
+
+  .nav-link{
+    color: $text-color-primary;
+  }
+
+  .navbar-brand{
+    width: 50px;
+    height: 100%;
+    border-radius: 50%;
+  }
+  .navbar-nav{
+    float: right;
+  }
+}
+
+#articles {
+  .btn_item {
+    font-family: $font-text;
+    text-decoration: none;
+    padding: 13px 35px;
+    color: $text-color-primary;
+    font-size: 14px;
+    font-weight: 500;
+    background-image: none;
+    background-color: $primary-color;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .btn_item:hover {
+    background-color: transparent;
+    border: 1px solid $secondary-color;
+    color: $secondary-color;
+  }
+
+  .card {
+    border: none;
+    border-radius: 0;
+  }
+
+  .card-img-top {
+    max-height: 200px;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 0;
+  }
+
+  .card-body {
+    min-height: 160px;
+  }
+
+  .card-footer {
+    border: none;
+    background-color: white;
+  }
 }

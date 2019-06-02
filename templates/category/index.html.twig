@@ -3,13 +3,9 @@
 {% block title %}Hello Category{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-    <h1>Liste et ajout de catégories</h1>
+<div class="container">
+    <h1 class="text-center">Liste et ajout de catégories</h1>
 
     <div>
         <a class="btn btn-primary my-5" href="{{ path('category_add') }}" role="button">Ajouter une catégorie</a>
