@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">{{ article.title }}</h1>
+
+    <table class="table">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ article.id }}</td>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <td>{{ article.title }}</td>
+        </tr>
+        <tr>
+            <th>Content</th>
+            <td>{{ article.content }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <strong>Tags :</strong>
+    <ul>
+        {% for tag in article.tags %}
+            <li><a href="{{ path('tag_show', {'name': tag.name}) }}">{{ tag.name }}</a></li>
+        {% else %}
+            <li>No tags for this article</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

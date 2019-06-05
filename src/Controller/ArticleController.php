@@ -6,6 +6,7 @@ use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
 use App\Service\Slugify;
+use function PHPSTORM_META\type;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -32,7 +33,7 @@ class ArticleController extends AbstractController
      * @param Slugify $slugify
      * @return Response
      */
-    public function new(Request $request, Slugify $slugify): Response
+    public function new(Request $request, Slugify $slugify, \Swift_Mailer $mailer): Response
     {
         $article = new Article();
         $form = $this->createForm(ArticleType::class, $article);
@@ -43,6 +44,17 @@ class ArticleController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($article);
             $entityManager->flush();
+
+            $mailTo = getenv('MAIL_TO');
+            $mailFrom = getenv('MAIL_FROM');
+            $message = (new \Swift_Message('Un nouvel article vient d\'être publié !'))
+                ->setFrom($mailFrom)
+                ->setTo($mailTo)
+                ->setContentType('text/html')
+                ->setBody($this->renderView('article/email/notification.html.twig', [
+                    'article' => $article,
+                ]));
+            $mailer->send($message);
 
             return $this->redirectToRoute('article_index');
         }
@@ -95,7 +107,7 @@ class ArticleController extends AbstractController
      */
     public function delete(Request $request, Article $article): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$article->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $article->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($article);
             $entityManager->flush();

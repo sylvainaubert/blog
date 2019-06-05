@@ -28,7 +28,6 @@ nav{
 
   .navbar-brand{
     width: 50px;
-    height: 100%;
     border-radius: 50%;
   }
   .navbar-nav{
@@ -36,25 +35,14 @@ nav{
   }
 }
 
-#articles {
-  .btn_item {
-    font-family: $font-text;
-    text-decoration: none;
-    padding: 13px 35px;
-    color: $text-color-primary;
-    font-size: 14px;
-    font-weight: 500;
-    background-image: none;
-    background-color: $primary-color;
-    margin-left: auto;
-    margin-right: auto;
-  }
+#home {
+  @extend .btn_item;
+  @extend .btn_item:hover;
+}
 
-  .btn_item:hover {
-    background-color: transparent;
-    border: 1px solid $secondary-color;
-    color: $secondary-color;
-  }
+#articles {
+  @extend .btn_item;
+  @extend .btn_item:hover;
 
   .card {
     border: none;
