@@ -45,6 +45,9 @@ class ArticleController extends AbstractController
             $author = $this->getUser();
             $article->setAuthor($author);
 
+            $admin = $this->getUser();
+            $article->setAuthor($admin);
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($article);
             $entityManager->flush();
