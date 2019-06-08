@@ -21,6 +21,7 @@
                             </div>
                             <div class="card-footer text-center">Id n° {{ article.id }}</div>
                             <div class="card-footer text-center">slug = {{ article.slug }}</div>
+                            <div class="card-footer text-center">Auteur = {{ article.author.email }}</div>
                             <div class="card-footer">
                                 <a type="button" href="{{ path('article_show', {'id': article.id}) }}" class="btn btn_item">show</a>
                                 <a href="{{ path('article_edit', {'id': article.id}) }}" class="btn btn_item float-right">edit</a>
