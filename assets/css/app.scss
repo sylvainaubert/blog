@@ -36,13 +36,15 @@ nav{
 }
 
 #home {
-  @extend .btn_item;
-  @extend .btn_item:hover;
+  a{
+    @extend .btn_item;
+  }
 }
 
 #articles {
-  @extend .btn_item;
-  @extend .btn_item:hover;
+  a{
+    @extend .btn_item;
+  }
 
   .card {
     border: none;
