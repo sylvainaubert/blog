@@ -12,6 +12,17 @@ use App\Entity\Tag;
 
 class TagController extends AbstractController
 {
+
+    /**
+     * @Route("/tag", name="tag_index", methods={"GET"})
+     */
+    public function index(TagRepository $tagRepository): Response
+    {
+        return $this->render('tag/index.html.twig', [
+            'tags' => $tagRepository->findAll(),
+        ]);
+    }
+
     /**
      * @Route("/tag/{name}", name="tag_show", methods={"GET"})
      * @param Tag $tag
@@ -19,8 +30,8 @@ class TagController extends AbstractController
      */
     public function show(Tag $tag): Response
     {
-        return $this->render('tag/index.html.twig', [
-            'tags' => $tag,
+        return $this->render('tag/show.html.twig', [
+            'tag' => $tag,
         ]);
     }
 }
