@@ -40,6 +40,9 @@ class ArticleController extends AbstractController
         $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
 
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
+
         if ($form->isSubmitted() && $form->isValid()) {
             $article->setSlug($slugify->generate($article->getTitle()));
 
