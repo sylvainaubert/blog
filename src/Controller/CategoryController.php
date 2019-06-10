@@ -7,6 +7,7 @@ use App\Form\CategoryType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 class CategoryController extends AbstractController
 {
@@ -28,6 +29,7 @@ class CategoryController extends AbstractController
     /**
      * @Route("/category/add", name="category_add")
      * @param Request $request
+     * @IsGranted("ROLE_ADMIN", message="Nope ! Top Secret ! For Admin only !")
      * @return \Symfony\Component\HttpFoundation\Response
      */
     public function add(Request $request)

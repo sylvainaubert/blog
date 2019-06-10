@@ -11,6 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 /**
  * @Route("/article")
@@ -91,6 +92,17 @@ class ArticleController extends AbstractController
      */
     public function edit(Request $request, Article $article, Slugify $slugify): Response
     {
+
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+
+        $user = $this->getUser();
+
+        if (!$this->isGranted('ROLE_ADMIN')) {
+            if ($article->getAuthor()->getId() !== $user->getId()) {
+                throw $this->createAccessDeniedException('Nope ! You can\'t ! Access only for Admin');
+            }
+        }
+
         $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
 
@@ -111,6 +123,7 @@ class ArticleController extends AbstractController
 
     /**
      * @Route("/{id}", name="article_delete", methods={"DELETE"})
+     * @IsGranted("ROLE_ADMIN")
      */
     public function delete(Request $request, Article $article): Response
     {
