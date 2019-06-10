@@ -123,7 +123,7 @@ class ArticleController extends AbstractController
 
     /**
      * @Route("/{id}", name="article_delete", methods={"DELETE"})
-     * @IsGranted("ROLE_ADMIN")
+     * @IsGranted("ROLE_ADMIN", message="You can\'t ! Already said ! Only for Admin !")
      */
     public function delete(Request $request, Article $article): Response
     {
