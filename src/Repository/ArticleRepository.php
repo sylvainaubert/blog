@@ -29,6 +29,7 @@ class ArticleRepository extends ServiceEntityRepository
             ->leftJoin('a.tags','t')
             ->leftJoin('a.author','u')
             ->addSelect('c', 't','u')
+            ->orderBy('a.id', 'DESC')
             ->getQuery();
 
         return $qb->execute();
