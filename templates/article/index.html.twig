@@ -25,7 +25,7 @@
                             {% for tag in article.tags %}
                                 <div class="card-footer text-center">tag : {{ tag.name }}</div>
                             {% else %}
-                                <div>No tag !</div>
+                                <div class="card-footer text-center">No tag !</div>
                             {% endfor %}
                             <div class="card-footer">
                                 <a type="button" href="{{ path('article_show', {'id': article.id}) }}"
