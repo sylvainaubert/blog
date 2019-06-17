@@ -25,6 +25,11 @@
                 <h2>{{ loop.index }} / {{ article.title }} - Category : {{ article.category.name }}</h2>
                 <p>slug = {{ article.slug }}</p>
                 <p>auteur = {{ article.author.email }}</p>
+                {% for tag in article.tags %}
+                    <p>tag : {{ tag.name }}</p>
+                {% else %}
+                    <p>No tag !</p>
+                {% endfor %}
                 <p>{{ article.content }}</p>
             </div>
         {% else %}

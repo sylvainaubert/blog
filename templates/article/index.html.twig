@@ -22,6 +22,11 @@
                             <div class="card-footer text-center">Id n° {{ article.id }}</div>
                             <div class="card-footer text-center">slug = {{ article.slug }}</div>
                             <div class="card-footer text-center">Auteur = {{ article.author.email }}</div>
+                            {% for tag in article.tags %}
+                                <div class="card-footer text-center">tag : {{ tag.name }}</div>
+                            {% else %}
+                                <div>No tag !</div>
+                            {% endfor %}
                             <div class="card-footer">
                                 <a type="button" href="{{ path('article_show', {'id': article.id}) }}"
                                    class="btn btn_item">show</a>
