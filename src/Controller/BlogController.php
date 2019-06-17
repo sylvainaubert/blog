@@ -26,7 +26,7 @@ class BlogController extends AbstractController
     {
         $articles = $this->getDoctrine()
             ->getRepository(Article::class)
-            ->findAll();
+            ->findAllWithCategoriesAndTags();
 
         if (!$articles) {
             throw $this->createNotFoundException(
