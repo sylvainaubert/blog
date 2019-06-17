@@ -21,7 +21,7 @@ class ArticleFixtures extends Fixture implements DependentFixtureInterface
         $faker = Faker\Factory::create('fr_FR');
         $slugify = new Slugify();
 
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 1000; $i++) {
             $article = new Article();
             $article->setTitle(mb_strtolower($faker->realText($maxNbChars = 10, $indexSize = 2)));
             $article->setContent(mb_strtolower($faker->sentence($nbWords = 6, $variableNbWords = true)));
