@@ -19,30 +19,31 @@ p {
   font-family: $font-text;
 }
 
-nav{
+nav {
   background-color: $primary-color;
 
-  .nav-link{
+  .nav-link {
     color: $text-color-primary;
   }
 
-  .navbar-brand{
+  .navbar-brand {
     width: 50px;
     border-radius: 50%;
   }
-  .nav-link-red{
+
+  .nav-link-red {
     color: $secondary-color;
   }
 }
 
 #home {
-  a{
+  a {
     @extend .btn_item;
   }
 }
 
 #articles {
-  a{
+  a {
     @extend .btn_item;
   }
 
@@ -68,7 +69,43 @@ nav{
   }
 }
 
-.flash-message{
+.flash-message {
   margin-top: 100px;
+  max-width: 540px;
+
+  .alert {
+    width: 600px;
+    height: 80px;
+    position: relative;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+
+    &:before {
+      content: "";
+      position: absolute;
+      right: 100%;
+      top: 26px;
+      width: 0;
+      height: 0;
+    }
+  }
+  .alert-success{
+    background-color: #d4edda;
+    &:before{
+      border-top: 13px solid transparent;
+      border-right: 26px solid #d4edda;
+      border-bottom: 13px solid transparent;
+    }
+  }
+
+  .alert-danger{
+    background-color: #f8d7da;
+    &:before{
+      border-top: 13px solid transparent;
+      border-right: 26px solid #f8d7da;
+      border-bottom: 13px solid transparent;
+    }
+  }
 
 }

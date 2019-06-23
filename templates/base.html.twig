@@ -12,14 +12,16 @@
     {% include 'Common/_navbar.html.twig' %}
 {% endblock %}
 
-<div class="container flash-message" style="z-index: 1000">
+<div class="container">
+    <div class="row flash-message mx-auto">
 {% for flashMessage, messages in app.flashes %}
     {% for message in messages %}
-        <div class="alert alert-{{ flashMessage }}">
-            {{ message }}
+        <div class="text-center alert alert-{{ flashMessage }}">
+            <p class="align-items-center">{{ message }}</p>
         </div>
     {% endfor %}
 {% endfor %}
+    </div>
 </div>
 
 {% block body %}{% endblock %}
