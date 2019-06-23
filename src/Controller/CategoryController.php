@@ -48,6 +48,8 @@ class CategoryController extends AbstractController
             $entityManager->persist($task);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Well Done ! You\'ve created a new category !');
+
             return $this->redirectToRoute('category_index');
         }
 

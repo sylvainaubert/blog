@@ -13,9 +13,9 @@
 {% endblock %}
 
 <div class="container flash-message" style="z-index: 1000">
-{% for category, messages in app.flashes %}
+{% for flashMessage, messages in app.flashes %}
     {% for message in messages %}
-        <div class="alert alert-{{ category }}">
+        <div class="alert alert-{{ flashMessage }}">
             {{ message }}
         </div>
     {% endfor %}
