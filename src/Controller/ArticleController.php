@@ -20,16 +20,13 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 class ArticleController extends AbstractController
 {
     /**
-     * @Route({
-     *     "fr" : "/article",
-     *     "en", "/article",
-     *     "es", "/articulos",
-     * }, name="article_index", methods={"GET"})
+     * @Route("/", name="article_index", methods={"GET"})
      * @param ArticleRepository $articleRepository
      * @return Response
      */
     public function index(ArticleRepository $articleRepository): Response
     {
+
         return $this->render('article/index.html.twig', [
             'articles' => $articleRepository->findAllWithCategoriesAndTags()
         ]);

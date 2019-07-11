@@ -35,9 +35,9 @@
                     {{ 'Language' | trans }}
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="{{ path('/', {'_locale':'en'}) }}">English</a>
-                    <a class="dropdown-item" href="{{ path('/', {'_locale':'fr'}) }}">French</a>
-                    <a class="dropdown-item" href="{{ path('/', {'_locale':'es'}) }}">Spanish</a>
+                    <a class="dropdown-item" href="{{ path('app_index', {'_locale': 'en'}) }}">English</a>
+                    <a class="dropdown-item" href="{{ path('app_index', {'_locale': 'fr'}) }}">French</a>
+                    <a class="dropdown-item" href="{{ path('app_index', {'_locale': 'es'}) }}">Spanish</a>
                 </div>
             </li>
 
