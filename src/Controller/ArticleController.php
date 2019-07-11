@@ -20,7 +20,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 class ArticleController extends AbstractController
 {
     /**
-     * @Route("/", name="article_index", methods={"GET"})
+     * @Route({
+     *     "fr" : "/article",
+     *     "en", "/article",
+     *     "es", "/articulos",
+     * }, name="article_index", methods={"GET"})
      * @param ArticleRepository $articleRepository
      * @return Response
      */
@@ -32,7 +36,11 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="article_new", methods={"GET","POST"})
+     * @Route({
+     *     "fr" : "/article/nouveau",
+     *     "en" : "/article/new",
+     *     "es" : "/articulo/nuevo",
+     * }, name="article_new", methods={"GET","POST"})
      * @param Request $request
      * @param Slugify $slugify
      * @return Response
@@ -160,9 +168,8 @@ class ArticleController extends AbstractController
     public function favorite(Request $request, Article $article, ObjectManager $manager): Response
     {
         if ($this->getUser()->getFavorite()->contains($article)) {
-            $this->getUser()->removeFavorite($article)   ;
-        }
-        else {
+            $this->getUser()->removeFavorite($article);
+        } else {
             $this->getUser()->addFavorite($article);
         }
         $manager->flush();

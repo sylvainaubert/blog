@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="en" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="kXLo7sm" resname="Bonjour">
+        <source>Bonjour</source>
+        <target>Bonjour </target>
+      </trans-unit>
+      <trans-unit id="Q7UTU9q" resname="account.logout">
+        <source>account.logout</source>
+        <target>Se déconnecter</target>
+      </trans-unit>
+      <trans-unit id="E_t5j6Q" resname="account.login">
+        <source>account.login</source>
+        <target>Se connecter</target>
+      </trans-unit>
+      <trans-unit id="HCCOY00" resname="Bonjour_username">
+        <source>Bonjour_username</source>
+        <target>Bonjour %username%</target>
+      </trans-unit>
+      <trans-unit id="OnhpU4i" resname="Home">
+        <source>Home</source>
+        <target>Accueil</target>
+      </trans-unit>
+      <trans-unit id="sUrHikb" resname="Articles">
+        <source>Articles</source>
+        <target>Articles</target>
+      </trans-unit>
+      <trans-unit id="KSwG8AR" resname="Category">
+        <source>Category</source>
+        <target>Categories</target>
+      </trans-unit>
+      <trans-unit id="EzEnW8U" resname="Tags">
+        <source>Tags</source>
+        <target>Mots-clés</target>
+      </trans-unit>
+      <trans-unit id="pP5lJk7" resname="Language">
+        <source>Language</source>
+        <target>Langue</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -27,7 +27,11 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * @Route("/category/add", name="category_add")
+     * @Route({
+     *     "fr": "/categorie/ajout",
+     *     "en": "/category/add",
+     *     "es": "/categoria/crear",
+     * }, name="category_add")
      * @param Request $request
      * @IsGranted("ROLE_ADMIN", message="Nope ! Top Secret ! For Admin only !")
      * @return \Symfony\Component\HttpFoundation\Response
