@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Ajout d'une catégorie{% endblock %}
+{% block title %}Add Category{% endblock %}
 
 {% block body %}
     <div class="example-wrapper">
-        <h1>Ajouter une catégorie</h1>
+        <h1>Add a category</h1>
 
         {{ form_start(form) }}
         {{ form_row(form.name) }}
         <input class="btn" type="submit" value="Add">
         {{ form_end(form) }}
 
-        <h2>Liste des catégories</h2>
+        <h2>List of categories</h2>
         {% for category in categories %}
             <div>
                 <p class="card-text">{{ category.id }}</p>

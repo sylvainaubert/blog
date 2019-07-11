@@ -5,10 +5,10 @@
 {% block body %}
 
 <div class="container">
-    <h1 class="text-center">Liste et ajout de catégories</h1>
+    <h1 class="text-center">Categories</h1>
 
     <div>
-        <a class="btn btn-primary my-5" href="{{ path('category_add') }}" role="button">Ajouter une catégorie</a>
+        <a class="btn btn-primary my-5" href="{{ path('category_add') }}" role="button">Add a category</a>
     </div>
     <ul>
         {% for category in categories %}

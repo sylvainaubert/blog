@@ -14,7 +14,7 @@
 
     <div class="example-wrapper">
 
-        <h1>Liste des Articles par : {{ tag.name }}</h1>
+        <h1>Articles list by : {{ tag.name }}</h1>
 
         {% for article in tag.articles %}
             <li><a href="{{ path('article_show', {'id': article.id}) }}">Id n° {{ article.id }} / {{ article.title }}</a></li>
